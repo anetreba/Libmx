@@ -1,18 +1,13 @@
 #include "libmx.h"
 
-int mx_count_letters(const char *s, char c) {
-	int i = 0;
-
-	while (s[i] != c && s[i])
-		i++;
-	return i;
-}
-
 char **mx_strsplit(const char *s, char c) {
 	int j = 0;
-	char **new = (char **)malloc(sizeof(char *) * (mx_count_words(s, c) + 1));
+	char **new;
 	int count_lett;
 
+	if (!s)
+		return NULL;
+	new = (char **)malloc(sizeof(char *) * (mx_count_words(s, c) + 1));
 	for (int i = 0; s[i]; i++) {
 		if (s[i] != c) {
 			count_lett = mx_count_letters(&s[i], c);

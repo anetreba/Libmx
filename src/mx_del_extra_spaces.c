@@ -18,6 +18,8 @@ char *mx_del_extra_spaces(const char *str) {
 		}
 		tmp = mx_strtrim(res);
 		free(res);
+		if (tmp == NULL)
+			return mx_strnew(0);
 		return tmp;
 	}
 	return NULL;

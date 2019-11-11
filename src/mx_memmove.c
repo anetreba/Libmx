@@ -1,8 +1,9 @@
 #include "libmx.h"
 
 void *mx_memmove(void *dst, const void *src, size_t len) {
-	for (size_t i = 0; i < len; i++) {
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-	}
+	unsigned char *tmp = malloc(len);
+	tmp = mx_memcpy(tmp, src, len);
+	dst = mx_memcpy(dst, tmp, len);
+	free(tmp);
 	return dst;
 }

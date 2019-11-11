@@ -6,7 +6,7 @@
  	int m = left + (right - left) / 2;
  	int count = 0;
 
- 	if (!arr)
+ 	if (!arr || *arr == NULL)
  		return -1; 
  	while(l <= r) {
  		for (; mx_strlen(arr[l]) < mx_strlen(arr[m]); l++);

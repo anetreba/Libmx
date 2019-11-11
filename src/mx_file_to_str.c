@@ -10,12 +10,14 @@
  		while (read(fd, &buf, 1))
  			len++;
  		close(fd);
- 		fd = open(file, O_RDONLY);
- 		str = mx_strnew(len);
- 		for (int i = 0; read(fd, &buf, 1); i++)
- 			str[i] = buf;
- 		close(fd);
- 		return str;
+ 		if (len > 0) {
+ 			fd = open(file, O_RDONLY);
+	 		str = mx_strnew(len);
+	 		for (int i = 0; read(fd, &buf, 1); i++)
+	 			str[i] = buf;
+	 		close(fd);
+	 		return str;
+ 		}
  	}
  	return NULL;
  }

@@ -6,6 +6,7 @@
 #include <wchar.h>
 #include <stdbool.h>
 #include <fcntl.h>
+#include <malloc/malloc.h>
 
 void mx_printchar(char c);
 void mx_print_unicode(wchar_t c);
@@ -24,6 +25,7 @@ int mx_quicksort(char **arr, int left, int right);
 int mx_is_space(char c);
 int mx_count_digits(long nb);
 void mx_swap_elem(void **s1, void **s2);
+int mx_count_letters(const char *s, char c);
 
 //String pack
 int mx_strlen(const char *s);

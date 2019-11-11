@@ -17,6 +17,8 @@ char *mx_strtrim(const char *str) {
 			new[j] = str[i];
 			i++;
 		}
+		if (new == NULL)
+			return mx_strnew(0);
 		return new;
 	}
 	return NULL;
