@@ -62,7 +62,8 @@ SRC = mx_binary_search.c \
 	mx_strstr.c \
 	mx_strtrim.c \
 	mx_swap_char.c \
-	mx_swap_elem.c
+	mx_swap_elem.c \
+	mx_count_letters.c
 
 
 OBJ_DIR = ./obj/

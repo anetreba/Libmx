@@ -20,5 +20,5 @@ void mx_print_unicode(wchar_t c) {
    		b[2] = (c >> 6  & 0x3F) | 0x80;
    		b[3] = (c >> 0  & 0x3F) | 0x80;
   }
-  write(1, b, 5);
+  write(1, b, mx_strlen(b));
 }
